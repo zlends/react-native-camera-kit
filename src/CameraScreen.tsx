@@ -154,6 +154,7 @@ export default class CameraScreen extends Component<Props, State> {
       !this.isCaptureRetakeMode() && (
         <TouchableOpacity style={{ paddingHorizontal: 15 }} onPress={() => this.onSwitchCameraPressed()}>
           <Image
+           //@ts-ignore
             style={[{ flex: 1, justifyContent: 'center' }, this.props.cameraImageStyle]}
             source={this.props.cameraFlipImage}
             resizeMode="contain"
@@ -291,6 +292,7 @@ export default class CameraScreen extends Component<Props, State> {
         <SafeAreaView style={[styles.bottomButtons, { backgroundColor: '#ffffff00' }]}>
           {this.renderBottomButton('left')}
           {this.renderCaptureButton()}
+          <View style={styles.bottomContainerGap} />
         </SafeAreaView>
       )
     );
